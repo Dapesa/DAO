@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<ul class="list-group">
+    {% for post in posts %}
+        <a href="{% url 'post_detail' pk=post.pk %}" class="text-decoration-none" style="color: #000;">
+            <li class="list-group-item">
+                <span><i>Published: {{ post.published_date }} </i></span>
+                <h3> {{ post.title }} </h3>
+            </li>
+        </a>
+    {% endfor %}
+</ul>
+{% endblock %}
